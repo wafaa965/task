@@ -1,0 +1,17 @@
+table {
+    border-collapse: collapse;
+   
+}
+table, th, td  {
+    border: 2px solid #bedaea;
+  }
+  th{
+    text-align: center;
+  }
+  th , td{
+     color:#1f628a;
+  }
+  .req{
+      background-color: #f8f9fa ;
+  }
+ 

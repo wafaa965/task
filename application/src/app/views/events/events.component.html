@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+
+
+<section class="col-8 main mt-5 ">
+
+    <form class="text-center border border-light p-5" #myForm="ngForm" (ngSubmit)="addNewEvent(myForm.value)">
+        <p class="h3 mb-5">Create New Event</p>
+
+        <!--Name-->
+        <label class="to-the-left dot">Event Name</label>
+        <input type="text" class="form-control mb-5" placeholder="Enter your event date" name="eventname" #eventname="ngModel"
+            required ngModel>
+        <div class="text-danger mb-3" *ngIf="eventname.invalid && eventname.touched">
+            *Must enter event name
+        </div>
+<!--date-->
+        <label class="to-the-left dot">Event Date</label>
+        <input type="date" class="form-control mb-5" placeholder="Enter new event date" name="date" #date="ngModel"
+            required [(ngModel)]='events.date'>
+        <div class="text-danger mb-3" *ngIf="date.invalid && date.touched">
+            *Must enter event date
+        </div>
+        <!--Description-->
+        <label class="to-the-left dot">Event Description</label>
+        <input type="text" class="form-control mb-5" placeholder="Enter event description " name="description"
+            #description="ngModel" required ngModel>
+        <div class="text-danger mb-3" *ngIf="description.invalid && description.touched">
+            *Must enter description
+        </div>
+
+       
+        <!--Button-->
+        <button class="btn btn-info btn-block" type="submit" [disabled]="myForm.invalid">Create </button>
+    </form>
+
+</section>

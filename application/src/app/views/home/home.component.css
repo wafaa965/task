@@ -1,0 +1,20 @@
+img{
+    height:500px;
+    width: 1200px;
+}
+.text-color{
+   color: #1f3161;
+}
+.card-img-overlay{
+    padding-top: 180px;
+}
+p{
+    justify-content: center;
+}
+button{
+    margin-left:200px;
+    margin-top: 50px;
+}
+.card{
+    height:90vh;
+}

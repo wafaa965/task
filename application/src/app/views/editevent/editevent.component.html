@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<section class="col-8 main mt-5 ">
+
+    <form class="text-center border border-light p-5" #myForm="ngForm" (ngSubmit)=" EditEvent(myForm.value)">
+        <p class="h3 mb-5">Edit {{events.eventname}}</p>
+
+        <!--Name-->
+        <label class="to-the-left dot">Event Name</label>
+        <input type="text" class="form-control mb-5" placeholder="Enter new event name" name="eventname" #eventname="ngModel"
+            required [(ngModel)]='events.eventname'>
+        <div class="text-danger mb-3" *ngIf="eventname.invalid && eventname.touched">
+            *Must enter event name
+        </div>
+  <!--Date-->
+  <label class="to-the-left dot">Event Date</label>
+  <input type="date" class="form-control mb-5" placeholder="Enter new event date" name="date" #date="ngModel"
+      required [(ngModel)]='events.date'>
+  <div class="text-danger mb-3" *ngIf="date.invalid && date.touched">
+      *Must enter event date
+  </div>
+
+       
+        <!--Description-->
+        <label class="to-the-left dot">Description</label>
+        <input type="text" class="form-control mb-5" placeholder="Description" name="description" #description="ngModel"
+            [(ngModel)]='events.description'>
+      
+        <!--Button-->
+        <button class="btn btn-info btn-block" type="submit" [disabled]="myForm.invalid"  >Edit</button>
+    </form>
+</section>

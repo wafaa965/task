@@ -1,0 +1,10 @@
+img{
+    width:60px;
+    height: 60px;
+}
+.main-color{
+    background-color:#1d2f5f ;
+}
+.main-text-color{
+    color:#eff0f2 !important; 
+}
