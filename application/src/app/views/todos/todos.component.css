@@ -1,0 +1,20 @@
+form {
+    display: inline-block;
+    margin-top: 50px;
+}
+h1{
+    margin-top: 50px;
+}
+.form-group {
+    text-align: center;
+    padding-bottom: 25px;
+}
+#todo {
+    margin: 0 auto;
+    width: 500px;
+}
+
+a.close {
+  float: right;
+}
+

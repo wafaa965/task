@@ -1,0 +1,15 @@
+<app-mainnavbar></app-mainnavbar>
+<section class="col-8 main mt-5 ">
+
+    <form class="text-center border border-light p-5" #myForm="ngForm" (ngSubmit)=" EditTodo(myForm.value)">
+        <p class="h3 mb-5">Edit {{todos._id}}</p>
+
+        <!--Name-->
+        <label class="to-the-left dot">Todo</label>
+        <input type="text" class="form-control mb-5" placeholder="Enter new todo" name="todo" #todo="ngModel"
+        required [(ngModel)]='todos.text'>
+       
+        <!--Button-->
+        <button class="btn btn-info btn-block" type="submit" >Edit</button>
+    </form>
+</section>

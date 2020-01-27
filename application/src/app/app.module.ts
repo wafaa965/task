@@ -5,36 +5,40 @@ import { HttpClientModule} from '@angular/common/http'
 import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import {EventService} from './event.service'
-
+import {UsersService} from './users.service';
+import {TodoService} from './todo.service'
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './views/home/home.component';
-import { TableComponent } from './views/table/table.component';
-
-import { DragDropModule } from "@angular/cdk/drag-drop";
-
+ import {AuthinterceptorService} from './authinterceptor.service'
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations' //<--- imported here
 
 import { ToastrModule } from 'ngx-toastr';
-import { EventsComponent } from './views/events/events.component';
-import { EditeventComponent } from './views/editevent/editevent.component';
 import { MainnavbarComponent } from './layouts/mainnavbar/mainnavbar.component';
 import { SigninComponent } from './views/signin/signin.component';
 import { SignupComponent } from './views/signup/signup.component';
+import { TodosComponent } from './views/todos/todos.component';
+import { AlltodosComponent } from './views/alltodos/alltodos.component';
+import { EdittodoComponent } from './views/edittodo/edittodo.component';
+import { EdituserComponent } from './views/edituser/edituser.component';
+import { UsersComponent } from './views/users/users.component';
+import { AllusersComponent } from './views/allusers/allusers.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    TableComponent,
-    EventsComponent,
-    EditeventComponent,
     MainnavbarComponent,
     SigninComponent,
     SignupComponent,
+    TodosComponent,
+    AlltodosComponent,
+    EdittodoComponent,
+    EdituserComponent,
+    UsersComponent,
+    AllusersComponent,
     
   ],
   imports: [
@@ -42,12 +46,13 @@ import { SignupComponent } from './views/signup/signup.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    DragDropModule,
     
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot() // ToastrModule added
   ],
-  providers: [EventService],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthinterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

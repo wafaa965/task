@@ -1,0 +1,23 @@
+.main{
+    margin-left: 200px;
+    background-color: #f8f9fa;
+}
+.to-the-left{
+  margin-right: 600px;
+}
+.age-to-left{
+    margin-right: 650px; 
+}
+label{
+    color:purple;
+    font-size: 18px;
+}
+
+p{
+    color:rgb(255, 1, 255);
+}
+.dot{
+    display : list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+}

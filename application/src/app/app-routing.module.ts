@@ -1,20 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent }  from './views/home/home.component'
-import {EventsComponent} from './views/events/events.component'
-import { TableComponent } from './views/table/table.component';
-import {EditeventComponent} from './views/editevent/editevent.component';
+import {TodosComponent} from './views/todos/todos.component'
+import {AlltodosComponent} from './views/alltodos/alltodos.component'
+import {EdittodoComponent} from './views/edittodo/edittodo.component'
 import {SigninComponent} from './views/signin/signin.component';
-import {SignupComponent} from './views/signup/signup.component'
+import {SignupComponent} from './views/signup/signup.component';
+import {UsersComponent} from './views/users/users.component';
+import {AllusersComponent} from './views/allusers/allusers.component';
+import {EdituserComponent} from './views/edituser/edituser.component'
 const routes: Routes = [
   { path:'', component:HomeComponent},
-  {path:'event',component:EventsComponent},
-  {path:'superadmin',component: TableComponent},
+  {path:'todo',component:TodosComponent},
+  {path:'all',component: AlltodosComponent},
   {path:'signin',component:SigninComponent},
   {path:'signup',component:SignupComponent},
-
-  {path:'edit/:id',component: EditeventComponent},
-  {path:'del', redirectTo:'manager',pathMatch:'full'}
+  { path :'admin',component:UsersComponent},
+  {path: 'allusers',component:AllusersComponent},
+  {path:'edit/:id',component: EdittodoComponent},
+  {path:'edituser/:id',component: EdituserComponent},
+  {path:'del', redirectTo:'',pathMatch:'full'}
   
 ];
 

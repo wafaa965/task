@@ -1,0 +1,17 @@
+table {
+    border-collapse: collapse;
+   
+}
+table, th, td  {
+    border: 2px solid rgb(209, 194, 209);
+  }
+  th{
+    text-align: center;
+  }
+  th , td{
+     color:purple;
+  }
+  .req{
+      background-color: #f8f9fa ;
+  }
+ 
